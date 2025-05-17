@@ -52,7 +52,7 @@ const Appendix = {
     },
 
     show() {
-        Z.modal('Dicas, complementos e sugestões para você avançar no seu aprendizado de Python.', Appendix.content);
+        Z.modal('Dicas, complementos e sugestões', Appendix.content);
         
     },
 

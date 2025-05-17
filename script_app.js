@@ -39,7 +39,13 @@ const App = {
             tx.push(`<div class="module-card" onclick="ModuleShow(${module.id})">`);
             tx.push(`<div class="module-card-title">Módulo ${num}: ${module.title}</div>`);
             tx.push(`<div class="module-card-description">${module.description}</div>`);
-
+            tx.push(`<div class="module-card-thumbs">`);
+            tx.push(`<div class="module-card-thumb"><img src="images/thumbs/thumbs${num}a.png" class="module-card-thumb-img"></div>`);
+            tx.push(`<div class="module-card-thumb"><img src="images/thumbs/thumbs${num}b.png" class="module-card-thumb-img"></div>`);
+            tx.push(`<div class="module-card-thumb"><img src="images/thumbs/thumbs${num}c.png" class="module-card-thumb-img"></div>`);
+            tx.push(`<div class="module-card-thumb"><img src="images/thumbs/thumbs${num}d.png" class="module-card-thumb-img"></div>`);
+            tx.push(`<div class="module-card-thumb"><img src="images/thumbs/thumbs${num}e.png" class="module-card-thumb-img"></div>`);
+            tx.push(`</div>`);
             tx.push(`<div class="module-card-footer">`);
             tx.push(`<div id="module-completion-${module.id}">[${totalConcludedLessons}/${totalLessons}]</div>`);
             tx.push(`</div>`);

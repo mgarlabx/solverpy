@@ -91,9 +91,27 @@ body {
 }
 
 .module-card-title {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: bold;
     margin-bottom: 12px;
     color: #333;
+}
+
+.module-card-thumbs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.module-card-thumb {
+    width: 18%;
+    border: 1px solid #ccc;
+}
+
+.module-card-thumb-img {
+    width: 100%;
 }
 
 .module-card-description {
@@ -359,8 +377,8 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
-    width: 90%;
-    height: 90%;
+    width: 85%;
+    height: 85%;
     z-index: 9999;
     overflow: auto; 
     background-color: white;
