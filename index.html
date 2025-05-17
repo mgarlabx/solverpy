@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<title>SolverPy</title>
+<meta charset="utf-8">
+<link rel="icon" type="image/png" href="images/cube.png">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<head>
+
+    <!-- Codemirror -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/theme/darcula.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/python/python.min.js"></script>
+
+    <!-- Pyodide -->
+    <!-- https://pyodide.org/ -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+
+    <!-- Marked -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <!-- SolverJS -->
+    <script src="https://solvertank.tech/solverjs/solverjs.js?v=3"></script>
+    <link rel="stylesheet" href="https://solvertank.tech/solverjs/solverjs.css?v=3">
+
+    <!-- Youtube API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+    <!-- Custom -->
+    <script type="module" src="script.js?v=5"></script>
+    <link rel="stylesheet" type="text/css" href="style.css?v=5">
+
+</head>
+
+<body>
+    <div class="main">
+        <div class="header">
+            <div class="header-left">
+                <div><img src="images/cube.png" width="30" alt="SolverPy Logo"></div>
+                <div class="header-title">SolverPy</div>
+            </div>
+            <div class="header-bot" onclick="chatbotShow()"><img width="50" src="images/ico_nova_draw2.png"></div>
+        </div>
+        <div class="main-div" id="intro"></div>
+        <div class="main-div" id="module"></div>
+    </div>
+
+    <div id="editor">
+        <div id="editor-backdrop" onclick="editorHide()"></div>
+        <div id="editor-modal">
+            <div id="editor-button-container">
+                <div id="editor-button-container-left">
+                    <button class="editor-button" onclick="editorRun()">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 5V19L18 12L8 5Z" stroke="#CCCCCC" stroke-width="1" fill="none" />
+                        </svg>
+                    </button>
+                    <button class="editor-button" onclick="editorClear()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#ccc"
+                            stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-trash">
+                            <polyline points="3 6 5 6 21 6" />
+                            <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6" />
+                            <path d="M10 11v6" />
+                            <path d="M14 11v6" />
+                            <path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2" />
+                        </svg>
+                    </button>
+                    <button class="editor-button" onclick="editorHelp()">
+                        <img src="images/ico_nova_draw2.png" width="24" alt="Help Nova">
+                    </button>
+                </div>
+                <div id="editor-button-container-right">
+                    <button class="editor-button" onclick="editorHide()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#ccc"
+                            stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
+                            <line x1="18" y1="6" x2="6" y2="18" />
+                            <line x1="6" y1="6" x2="18" y2="18" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="editor-code-container">
+                <textarea id="editor-code">print("Hello from Python")</textarea>
+            </div>
+            <div id="editor-console-container">
+                <div id="editor-console"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="chatbot">
+        <div id="chatbot-backdrop" onclick="chatbotHide()"></div>
+        <div id="chatbot-modal">
+            <div id="chatbot-button-container">
+                <div id="chatbot-button-container-left">
+                    <button class="chatbot-button" onclick="chatbotClear()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#000"
+                            stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-trash">
+                            <polyline points="3 6 5 6 21 6" />
+                            <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6" />
+                            <path d="M10 11v6" />
+                            <path d="M14 11v6" />
+                            <path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2" />
+                        </svg>
+                    </button>
+                </div>
+                <div id="chatbot-button-container-right">
+                    <button class="chatbot-button" onclick="chatbotHide()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#000"
+                            stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
+                            <line x1="18" y1="6" x2="6" y2="18" />
+                            <line x1="6" y1="6" x2="18" y2="18" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="chatbot-messages-container">
+
+            </div>
+            <div id="chatbot-input-container">
+                <input type="text" id="chatbot-input-text" placeholder="Pergunte-me qualquer coisa sobre o curso...">
+                <button id="chatbot-input-button" class="chatbot-button" onclick="chatbotSend()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#000"
+                        stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send">
+                        <line x1="22" y1="2" x2="11" y2="13" />
+                        <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</body>
+
+</html>

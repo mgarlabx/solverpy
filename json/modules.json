@@ -1,0 +1,22 @@
+[
+    {
+        "id": 28799,
+        "title": "Introdu\u00e7\u00e3o",
+        "description": "Neste m\u00f3dulo, voc\u00ea ser\u00e1 apresentado ao universo da programa\u00e7\u00e3o com Python. Vamos explorar os conceitos b\u00e1sicos da linguagem, como vari\u00e1veis, tipos de dados, estruturas de controle e fun\u00e7\u00f5es. Mesmo que voc\u00ea nunca tenha programado antes, este m\u00f3dulo ir\u00e1 gui\u00e1-lo de forma acess\u00edvel e pr\u00e1tica, ajudando a desenvolver uma base s\u00f3lida para os pr\u00f3ximos passos."
+    },
+    {
+        "id": 85016,
+        "title": "Conceitos e IDEs",
+        "description": "Aqui, voc\u00ea vai aprender os conceitos b\u00e1sicos que foram utilizados no m\u00f3dulo anterior, para compreender o que est\u00e1 por tr\u00e1s dos c\u00f3digos. Ir\u00e1 tamb\u00e9m preparar seu ambiente de desenvolvimento para as pr\u00f3ximas etapas. Vamos instalar o Python, configurar uma IDEs (VS Code) e entender os tipos de arquivos em um projeto Python."
+    },
+    {
+        "id": 75899,
+        "title": "Pandas e IA",
+        "description": "Neste m\u00f3dulo, mergulharemos na manipula\u00e7\u00e3o de dados com a biblioteca Pandas, uma das mais poderosas ferramentas para an\u00e1lise de dados em Python. Voc\u00ea aprender\u00e1 a importar, transformar e visualizar dados, al\u00e9m de dar os primeiros passos em intelig\u00eancia artificial, entendendo como usar as APIs da IA Generativa."
+    },
+    {
+        "id": 65834,
+        "title": "Streamlit",
+        "description": "No m\u00f3dulo final, voc\u00ea ir\u00e1 transformar seus c\u00f3digos em aplica\u00e7\u00f5es web interativas usando o Streamlit. Aprender\u00e1 a criar dashboards, exibir gr\u00e1ficos e interagir com os usu\u00e1rios por meio de interfaces simples e r\u00e1pidas. \u00c9 a oportunidade de ver seu projeto ganhar forma e se tornar uma aplica\u00e7\u00e3o real que pode ser compartilhada com o mundo."
+    }
+]
